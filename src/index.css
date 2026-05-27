@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #05070b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(41, 240, 212, 0.16), transparent 30rem),
+    radial-gradient(circle at 82% 6%, rgba(255, 111, 145, 0.12), transparent 24rem),
+    linear-gradient(180deg, #05070b 0%, #081016 42%, #05070b 100%);
+  color: #eef6fb;
+}
+
+::selection {
+  background: rgba(41, 240, 212, 0.32);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(13, 18, 26, 0.86), rgba(13, 18, 26, 0.52));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(104, 216, 255, 0.18), transparent);
+  animation: scan 5s linear infinite;
+}
