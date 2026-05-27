@@ -1,7 +1,7 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import ServiceCard from "../components/ServiceCard.jsx";
-import { hero, reasons, services, technologies } from "../data/siteData.jsx";
+import { aiToolchain, deliveryFlow, hero, reasons, services, technologies } from "../data/siteData.jsx";
 
 const heroImage = `${import.meta.env.BASE_URL}cortexqa-hero.png`;
 
@@ -24,6 +24,13 @@ function HomePage() {
               {hero.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">{hero.description}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              {hero.proofPoints.map((point) => (
+                <span key={point} className="rounded-md border border-white/12 bg-white/[0.04] px-3 py-2 text-sm font-medium text-slate-200">
+                  {point}
+                </span>
+              ))}
+            </div>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Link to="/services" className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cortex-teal px-6 font-semibold text-slate-950 transition hover:bg-cortex-cyan">
                 Explore services <ArrowRight size={18} />
@@ -39,13 +46,60 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cortex-amber">About</p>
-            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Quality engineering for AI-speed delivery.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cortex-amber">AI-First Approach</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Quality engineering that thinks with your delivery system.</h2>
           </div>
           <div className="glass rounded-lg p-6 sm:p-8">
             <p className="text-lg leading-8 text-slate-300">
-              CortexQA partners with product and platform teams to modernize testing, strengthen reliability, and make production signals actionable.
+              CortexQA blends AI agents, automation architecture, performance science, Kubernetes reliability, chaos experiments, and observability into one flow. The result is faster diagnosis, smarter coverage, and release decisions based on signals instead of guesswork.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-white/10 bg-panel py-20">
+        <div className="absolute inset-0 grid-overlay opacity-45" />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cortex-teal">AI Toolchain</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">A modern intelligence layer for QA and reliability.</h2>
+            <p className="mt-5 leading-8 text-slate-300">
+              We bring the tools that make AI useful in engineering: agents, risk models, self-healing suites, telemetry copilots, synthetic data, and controlled experiments.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {aiToolchain.map((tool) => {
+              const Icon = tool.icon;
+              return (
+                <article key={tool.title} className="glass rounded-lg p-6 transition hover:-translate-y-1 hover:border-cortex-teal/45">
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-md border border-cortex-teal/25 bg-cortex-teal/10 text-cortex-teal">
+                    <Icon size={23} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{tool.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-300">{tool.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cortex-rose">Engagement Flow</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">From noisy delivery risk to an AI-assisted quality system.</h2>
+          </div>
+          <div className="grid gap-4">
+            {deliveryFlow.map((item) => (
+              <div key={item.step} className="glass grid gap-4 rounded-lg p-5 sm:grid-cols-[4.5rem_1fr] sm:items-start">
+                <div className="text-3xl font-semibold text-cortex-amber">{item.step}</div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 leading-7 text-slate-300">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

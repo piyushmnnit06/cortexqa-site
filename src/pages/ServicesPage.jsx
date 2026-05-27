@@ -7,8 +7,8 @@ function ServicesPage() {
     <>
       <PageHeader
         eyebrow="Services"
-        title="Consulting services for quality, scale, and resilience."
-        description="Each service can stand alone or fit into a larger quality and reliability transformation."
+        title="AI-first services for quality, scale, and resilience."
+        description="Each service combines consulting depth with implementation: agents, automation, telemetry, experiments, and platform reliability woven into your delivery flow."
       />
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

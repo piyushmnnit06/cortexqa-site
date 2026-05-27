@@ -6,8 +6,8 @@ function WhyChooseUsPage() {
     <>
       <PageHeader
         eyebrow="Why Choose Us"
-        title="Senior reliability expertise without process theater."
-        description="We focus on measurable engineering outcomes: fewer escaped defects, stronger production readiness, faster diagnosis, and releases teams can trust."
+        title="The difference is an AI-first operating model, not another testing checklist."
+        description="We focus on measurable engineering outcomes: smarter coverage, fewer escaped defects, stronger production readiness, faster diagnosis, and releases teams can trust."
       />
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">
