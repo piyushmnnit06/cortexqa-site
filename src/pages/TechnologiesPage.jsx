@@ -1,20 +1,27 @@
 import PageHeader from "../components/PageHeader.jsx";
-import { technologies } from "../data/siteData.jsx";
+import { technologyGroups } from "../data/siteData.jsx";
 
 function TechnologiesPage() {
   return (
     <>
       <PageHeader
         eyebrow="Technologies"
-        title="Tools we use to build reliable software delivery systems."
-        description="CortexQA works across automation, performance, Kubernetes, observability, and delivery infrastructure."
+        title="High-demand technologies for AI-era QA and reliability."
+        description="CortexQA works across agentic QA, automation, API quality, performance, Kubernetes reliability, observability, and delivery infrastructure."
       />
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {technologies.map((tech) => (
-            <div key={tech} className="rounded-md border border-white/10 bg-white/[0.035] px-4 py-4 text-center text-sm font-medium text-slate-200 transition hover:border-cortex-teal/50 hover:text-cortex-teal">
-              {tech}
-            </div>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {technologyGroups.map((group) => (
+            <article key={group.title} className="glass rounded-lg p-6">
+              <h2 className="text-xl font-semibold text-white">{group.title}</h2>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.tools.map((tech) => (
+                  <span key={tech} className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-cortex-teal/50 hover:text-cortex-teal">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </section>

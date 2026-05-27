@@ -129,24 +129,34 @@ export const deliveryFlow = [
   },
 ];
 
-export const technologies = [
-  "Playwright",
-  "Cypress",
-  "Selenium",
-  "JMeter",
-  "k6",
-  "Postman",
-  "REST Assured",
-  "Kubernetes",
-  "Docker",
-  "Prometheus",
-  "Grafana",
-  "OpenTelemetry",
-  "Datadog",
-  "GitHub Actions",
-  "Jenkins",
-  "Terraform",
+export const technologyGroups = [
+  {
+    title: "AI Quality Stack",
+    tools: ["GitHub Copilot", "OpenAI", "Claude", "LangChain", "LangGraph", "Vector Search"],
+  },
+  {
+    title: "Modern Test Automation",
+    tools: ["Playwright", "Cypress", "Selenium", "Appium", "Testcontainers", "WireMock"],
+  },
+  {
+    title: "API & Contract Quality",
+    tools: ["Postman", "REST Assured", "Pact", "GraphQL", "gRPC", "OpenAPI"],
+  },
+  {
+    title: "Performance & Resilience",
+    tools: ["k6", "JMeter", "Gatling", "Chaos Mesh", "LitmusChaos", "Gremlin"],
+  },
+  {
+    title: "Cloud-Native Reliability",
+    tools: ["Kubernetes", "Docker", "Helm", "Terraform", "Argo CD", "Istio"],
+  },
+  {
+    title: "Observability & Delivery",
+    tools: ["OpenTelemetry", "Prometheus", "Grafana", "Datadog", "Jaeger", "GitHub Actions"],
+  },
 ];
+
+export const technologies = technologyGroups.flatMap((group) => group.tools);
 
 export const reasons = [
   {

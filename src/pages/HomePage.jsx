@@ -1,7 +1,7 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import ServiceCard from "../components/ServiceCard.jsx";
-import { aiToolchain, deliveryFlow, hero, reasons, services, technologies } from "../data/siteData.jsx";
+import { aiToolchain, deliveryFlow, hero, reasons, services, technologyGroups } from "../data/siteData.jsx";
 
 const heroImage = `${import.meta.env.BASE_URL}cortexqa-hero.png`;
 
@@ -127,12 +127,19 @@ function HomePage() {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cortex-rose">Technologies</p>
-            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Tooling across test, platform, and telemetry.</h2>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">High-demand tools for AI-era quality engineering.</h2>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {technologies.slice(0, 8).map((tech) => (
-              <div key={tech} className="rounded-md border border-white/10 bg-white/[0.035] px-4 py-3 text-center text-sm font-medium text-slate-200">
-                {tech}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {technologyGroups.slice(0, 4).map((group) => (
+              <div key={group.title} className="glass rounded-lg p-5">
+                <h3 className="font-semibold text-white">{group.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.tools.slice(0, 4).map((tech) => (
+                    <span key={tech} className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
